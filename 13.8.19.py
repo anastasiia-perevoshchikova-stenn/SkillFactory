@@ -1,16 +1,13 @@
-count = int(input("Insert quantity of tickets you need: "))
-list_of_ages = [int(input("Insert age: ")) for i in range(count)]
-price1 = 0
-price2 = 990
-price3 = 1390
+count = int(input("Введите количество билетов: "))
+list_of_ages = [int(input("Введите возраст посетителя: ")) for i in range(count)]
 list_of_prices = []
 for value in list_of_ages:
     if value < 18:
-        list_of_prices.append(price1)
-    if 18 <= value <= 25:
-        list_of_prices.append(price2)
-    if value > 25:
-        list_of_prices.append(price3)
+        list_of_prices.append(0)
+    elif 18 <= value <= 25:
+        list_of_prices.append(990)
+    else:
+        list_of_prices.append(1390)
 
 if count > 3:
     print("Стоимость заказа со скидкой равна:", int(sum(list_of_prices)*0.9), "рублей")
